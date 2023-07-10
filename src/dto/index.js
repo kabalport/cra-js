@@ -64,11 +64,12 @@ export class AddCardDto {
 }
 
 export class ProductDto {
-  constructor({ id, productName, price, description, image, options = [] }) {
+  constructor({ id, title, price, description, category, image, options = [] }) {
     this.id = id;
-    this.productName = productName;
+    this.title = title;
     this.price = price;
     this.description = description;
+    this.category = category;
     this.image = image;
     this.options = options;
   }

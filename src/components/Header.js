@@ -53,22 +53,56 @@ function Header() {
   // };
 
   return (
+    <header className="header">
+        <div className="contents">
+            <Link to="/">
+                <img src={"/logoKakao.png"} alt="logoKakao.png" height={30} />
+            </Link>
+      <nav>
+          <div className="navigation">
 
-      <AppBar position="static">
-        <Toolbar>
-          <Link href="/" passHref>
-            <Typography
-                variant="h6"
-                style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <img src="https://via.placeholder.com/30" alt="logo" width="30" />{" "}
-              TEST
-            </Typography>
-          </Link>
+              <span>
+              <Link to="/cart">
+                <img src={"/cart.png"} alt="cart.png" height={30} />
+              </Link>
+            </span>
+              <span>|</span>
+              <span>
+              {isLoggedIn ? (
+                  // <Link
+                  //     to="/login"
+                  //     onClick={handleLogout}
+                  //     style={{ textDecoration: "none", color: "black" }}
+                  // >
+                  //     {" "}
+                  //     로그아웃{" "}
+                  // </Link>
+                  <>
 
-
-
-          <div style={{ flexGrow: 1 }} />
+                      <Link
+                          to="/my-page"
+                          style={{ textDecoration: "none", color: "black" }}
+                      >
+                        {" "}
+                        MyPage{" "}
+                      </Link>
+                  <Button
+                      color="inherit"
+                      onClick={handleLogoutDialogOpen}
+                  >
+                      로그아웃
+                  </Button>
+                  </>
+              ) : (
+                  <Link
+                      to="/login"
+                      style={{ textDecoration: "none", color: "black" }}
+                  >
+                      {" "}
+                      로그인{" "}
+                  </Link>
+              )}
+            </span>
 
           <Link
               to="/products"
@@ -80,30 +114,6 @@ function Header() {
 
 
 
-          <Link
-              to="/my-page"
-              style={{ display: isLoggedIn ? "block" : "none",textDecoration: "none", color: "inherit" }}
-          >
-            {" "}
-            MyPage{" "}
-          </Link>
-
-
-          <Link
-                           to="/login"
-                           style={{ display: isLoggedIn ? "none" : "block",textDecoration: "none", color: "inherit" }}
-                         >
-                           {" "}
-               로그인{" "}
-          </Link>
-
-          <Button
-              color="inherit"
-              style={{ display: isLoggedIn ? "block" : "none",textDecoration: "none", color: "inherit" }}
-              onClick={handleLogoutDialogOpen}
-          >
-            로그아웃
-          </Button>
 
           <Dialog
               open={logoutDialogOpen}
@@ -126,46 +136,12 @@ function Header() {
               </Button>
             </DialogActions>
           </Dialog>
-        </Toolbar>
-      </AppBar>
 
-    // <header className="header">
-    //   <div className="contents">
-    //     <Link to="/">
-    //       <img src={"/logoKakao.png"} alt="logoKakao.png" height={30} />
-    //     </Link>
-    //     <nav>
-    //       <div className="navigation">
-    //         <span>
-    //           <Link to="/cart">
-    //             <img src={"/cart.png"} alt="cart.png" height={30} />
-    //           </Link>
-    //         </span>
-    //         <span>|</span>
-    //         <span>
-    //           {isLogin ? (
-    //             <Link
-    //               to="/login"
-    //               onClick={handleLogout}
-    //               style={{ textDecoration: "none", color: "black" }}
-    //             >
-    //               {" "}
-    //               로그아웃{" "}
-    //             </Link>
-    //           ) : (
-    //             <Link
-    //               to="/login"
-    //               style={{ textDecoration: "none", color: "black" }}
-    //             >
-    //               {" "}
-    //               로그인{" "}
-    //             </Link>
-    //           )}
-    //         </span>
-    //       </div>
-    //     </nav>
-    //   </div>
-    // </header>
+
+          </div>
+      </nav>
+  </div>
+      </header>
   );
 }
 

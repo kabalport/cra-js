@@ -10,26 +10,10 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-// import Link from "next/link"; // 추가된 코드
+
+
 import myAxios from "../utils/myaxios";
 import {Link} from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    marginTop: theme.spacing(3),
-  },
-  productCard: {
-    marginBottom: theme.spacing(3),
-  },
-  media: {
-    height: 0,
-    paddingTop: "150%",
-  },
-  gridContainer: {
-    justifyContent: "center",
-  },
-}));
 
 const ProductList = ({
   categories,
@@ -39,7 +23,7 @@ const ProductList = ({
   categoryId,
 }) => {
   // 수정된 코드
-  const classes = useStyles();
+
 
   const [imagesLoaded, setImagesLoaded] = React.useState(false); // 추가된 코드
 
@@ -65,7 +49,7 @@ const ProductList = ({
   const emptyCardCount = 4 - (products.length % 4);
 
   return (
-    <Container className={classes.container}>
+    <Container>
       <Grid container spacing={3}>
         <Grid item>
           <Link href={`/products`} passHref>
@@ -81,15 +65,14 @@ const ProductList = ({
         ))}
       </Grid>
 
-      <Grid container spacing={3} className={classes.gridContainer}>
+      <Grid container spacing={3}>
         {products.length > 0 ? (
           products.map((product, index) => (
             <Grid item xs={12} sm={12} md={4} lg={4} key={index}>
               {" "}
               {/* 한 줄에 최대 3개 표시 */}
-              <Card className={classes.productCard}>
+              <Card >
                 <CardMedia
-                  className={classes.media}
                   image={product.imageUrl}
                   title={product.title}
                 />

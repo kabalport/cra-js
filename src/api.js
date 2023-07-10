@@ -29,6 +29,11 @@ instance.interceptors.response.use(
 
 export { instance };
 
+
+
+const getProducts2 = async (props) => {
+  return await instance.get(`/products?page=${props}`);
+};
 /**
     전체 상품 조회
 **/

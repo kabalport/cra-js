@@ -34,6 +34,7 @@ function ProductMain() {
       const list = res.data.response.map((v) => {
         return new ProductDto(v);
       });
+
       products.push(...list);
       setProducts((products) => products);
     } catch (e) {
