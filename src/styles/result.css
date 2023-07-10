@@ -1,0 +1,33 @@
+#result-title {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+
+#result-btn-list {
+  margin-right: 5px;
+}
+
+#result-content {
+  padding-top: 20px;
+  border: 1px solid #e2e2e2;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  width: 60%;
+}
+
+ul#item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  border-bottom: 1px solid #e2e2e2;
+}
+.row {
+  padding: 3px 15px;
+}
+.label {
+  font-weight: bold;
+}
