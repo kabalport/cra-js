@@ -97,12 +97,11 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/my-page" element={<MyPage />}></Route>
-            <Route path="/products" element={<Products />}></Route>
-
 
             {/* Header, Footer 레이아웃 */}
             <Route element={<MainLayout />}>
               <Route path="/" element={<Main />}></Route>
+              <Route path="/products" element={<Products />}></Route>
               <Route path="/product/:productId" element={<Detail />}></Route>
               <Route path="/cart" element={<Cart />}></Route>
               <Route path="/order" element={<Order />}></Route>
